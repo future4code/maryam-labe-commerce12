@@ -1,4 +1,4 @@
-# Projeto LabECommerce 🛒
+# Projeto LabECommerce 🛍️
 
 **Descrição:** ---
 
