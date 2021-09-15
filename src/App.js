@@ -3,7 +3,6 @@ import './App.css';
 import PaginaHome from './components/itens/home'
 import Carrinho from './components/Carrinho';
 
-
 class App extends React.Component {
 
   state = {
@@ -30,7 +29,6 @@ class App extends React.Component {
       <div>
         <PaginaHome />
         <Carrinho />
-
       </div>
     );
   }
