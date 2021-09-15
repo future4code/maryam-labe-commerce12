@@ -4,7 +4,6 @@ import styled from "styled-components";
 const MainContainer = styled.div `
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
 `
@@ -13,11 +12,10 @@ const Caixinha = styled.div `
     display: block;
     justify-content: center;
     align-content: center;
-    margin-top: 20px;
     border: 1px solid black;
     width: 300px;
-    height: 500px;
     text-align: center;
+    padding-bottom: 20px;
 `
 
 class Carrinho extends React.Component {
@@ -88,9 +86,12 @@ class Carrinho extends React.Component {
         <MainContainer>
             <Caixinha>
                 <h3>Carrinho:</h3>
-                x Produto aqui x<br/><br/>
+                x Produto aqui x <button>Remover</button><br/><br/>
+                x Produto aqui x <button>Remover</button><br/><br/>
+                x Produto aqui x <button>Remover</button><br/><br/>
+                x Produto aqui x <button>Remover</button><br/><br/>
 
-                Valor total: R$0,00
+                <b>Valor total: R$0,00</b>
 
             </Caixinha>
         </MainContainer>

@@ -1,7 +1,23 @@
 import React from 'react';
-import './App.css';
 import PaginaHome from './components/itens/home'
 import Carrinho from './components/Carrinho';
+import styled from 'styled-components';
+
+const MainContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+`
+
+const DividindoLayout = styled.div `
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+`
+
 
 class App extends React.Component {
 
@@ -26,10 +42,13 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <MainContainer>
+        <DividindoLayout>
+        <Carrinho />
         <PaginaHome />
         <Carrinho />
-      </div>
+        </DividindoLayout>
+      </MainContainer>
     );
   }
 }
