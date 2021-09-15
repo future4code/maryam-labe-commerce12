@@ -1,1 +1,11 @@
-Sejam bem vindos ao Labe-commerce, esse repositório contém um esqueleto de app React e um .gitignore.
+# Projeto LabECommerce 🛒
+
+**Descrição:** ---
+
+**Turma:** Maryam (integral)
+
+**Integrantes:** Emilly Correa Santiago (@emillysant), Maria Helena V. C. de Souza (@mhsouza88), Willian Santiago (@ShaneSantiago).
+
+**Surge:** ---
+
+**Prints:** ---
