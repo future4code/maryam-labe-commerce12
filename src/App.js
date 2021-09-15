@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import PaginaHome from './components/itens/home'
-
+import Carrinho from './components/Carrinho';
 
 class App extends React.Component {
 
@@ -29,7 +28,7 @@ class App extends React.Component {
     return (
       <div>
         <PaginaHome />
-
+        <Carrinho />
       </div>
     );
   }
