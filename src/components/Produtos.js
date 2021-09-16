@@ -24,7 +24,7 @@ export default class Produtos extends React.Component {
                 <div>
                   <MeuBotao
 
-                  //onClick={() => this.props.adicionarProduto(this.props.id)}
+                  onClick={this.adicionaCarrinho}
                   >
                     Adicionar ao carrinho
                   </MeuBotao>
