@@ -26,10 +26,22 @@ export default class Filtro extends React.Component {
           <h3>Filtrar Pesquisas</h3>
           <br></br>
           <label htmlFor="min">Valor Minimo: </label>
-          <input type="number" name="valorMin" id="min"></input>
+          <input
+            type="number"
+            name="valorMin"
+            id="min"
+            value={this.props.valorMin}
+            onChange={this.props.atualizarMin}
+          ></input>
           <br></br>
           <label htmlFor="max">Valor Maximo: </label>
-          <input type="number" name="valorMax" id="max"></input>
+          <input
+            type="number"
+            name="valorMax"
+            id="max"
+            value={this.props.valorMax}
+            onChange={this.props.atualizarMax}
+          ></input>
           <br></br>
         </Caixinha>
       </MainContainer>
