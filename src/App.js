@@ -1,7 +1,9 @@
 import React from 'react';
-import PaginaHome from './components/itens/home'
 import Carrinho from './components/Carrinho';
+import Filtro from './components/Filtro';
+import Produtos from './components/Produtos';
 import styled from 'styled-components';
+import {listaProdutos} from './components/ListaDeProdutos'
 
 const MainContainer = styled.div `
   display: flex;
@@ -18,35 +20,21 @@ const DividindoLayout = styled.div `
   align-content: center;
 `
 
-
 class App extends React.Component {
 
   state = {
-    produtos: [{
-      id: 1,
-      name: "Foguete da Missão Apollo 11",
-      value: 10000.0,
-      imageUrl: "https://picsum.photos/200/200",
-    }, {
-      id: 1,
-      name: "Foguete da Missão Apollo 11",
-      value: 10000.0,
-      imageUrl: "https://picsum.photos/200/200",
-    }]
-
   }
   
-
-
-
   
   render() {
+  
+    
     return (
       <MainContainer>
         <DividindoLayout>
-        <Carrinho />
-        <PaginaHome />
-        <Carrinho />
+          <Filtro />
+          <Produtos produtos={listaProdutos}/>
+          <Carrinho />
         </DividindoLayout>
       </MainContainer>
     );
