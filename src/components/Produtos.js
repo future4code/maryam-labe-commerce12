@@ -7,7 +7,7 @@ export default class Produtos extends React.Component {
   render() {
 
     // seria legal colocar um if para saber se a lista esta cheia, mas quando eu coloco não consigo acessar a variável camisas
-    console.log(this.props.produtos)
+    //console.log(this.props.produtos)
       const camisas = this.props.produtos.map((camisa) =>{
           return (
             <ProdutosContainer>
