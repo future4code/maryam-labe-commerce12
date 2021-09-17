@@ -22,6 +22,7 @@ export default class Produtos extends React.Component {
             <div>
               <MeuBotao
 
+
               //onClick={() => this.props.adicionarProduto(this.props.id)}
               >
                 Adicionar ao carrinho
@@ -53,6 +54,7 @@ export default class Produtos extends React.Component {
         <ProdutosContainer>{camisas}</ProdutosContainer>
       </div>
     );
+
   }
 }
 

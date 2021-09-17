@@ -20,8 +20,34 @@ const DividindoLayout = styled.div`
   align-content: center;
 `;
 
+const arrayDeProdutos = [
+  {
+    id: 1,
+    imagem: "https://picsum.photos/200/200",
+    nome: "Camisa1",
+    valor: 100,
+    descricao: "camisa de espaço",
+  },
+  {
+    id: 2,
+    imagem: "https://picsum.photos/200/201",
+    nome: "Camisa2",
+    valor: 150,
+    descricao: "camisa de nave",
+  },
+  {
+    id: 3,
+    imagem: "https://picsum.photos/200/202",
+    nome: "Camisa3",
+    valor: 70,
+    descricao: "Camisa de nave",
+  },
+];
+
+
 class App extends React.Component {
   state = {
+    listaState: arrayDeProdutos,
     valorMin: "",
     valorMax: "",
     pesquisaNome: "",
@@ -78,6 +104,18 @@ class App extends React.Component {
     return produtosFiltrados;
   };
 
+  adicionaCarrinho = () => {
+    const novaCompra = {
+      nome: this.state.nome,
+      valor: this.state.nome,
+    };
+
+    this.setState({
+      listaState: [...this.state.listaState, novaCompra]
+    });
+
+  };
+
   render() {
     return (
       <MainContainer>
@@ -95,6 +133,7 @@ class App extends React.Component {
             ordem={this.state.ordem}
             atualizarOrdem={this.controlarInputOrdem}
           />
+
           <Carrinho />
         </DividindoLayout>
       </MainContainer>
