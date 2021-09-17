@@ -25,8 +25,9 @@ export default class Filtro extends React.Component {
         <Caixinha>
           <h3>Filtrar Pesquisas</h3>
           <br></br>
-          <label htmlFor="min">Valor Minimo: </label>
+          <label htmlFor="min">Minimo: </label>
           <input
+            placeholder="Valor Mínimo"
             type="number"
             name="valorMin"
             id="min"
@@ -34,8 +35,9 @@ export default class Filtro extends React.Component {
             onChange={this.props.atualizarMin}
           ></input>
           <br></br>
-          <label htmlFor="max">Valor Maximo: </label>
+          <label htmlFor="max">Maximo: </label>
           <input
+            placeholder="Valor Máximo"
             type="number"
             name="valorMax"
             id="max"
@@ -43,6 +45,14 @@ export default class Filtro extends React.Component {
             onChange={this.props.atualizarMax}
           ></input>
           <br></br>
+          <label htmlFor="max">Pesquisa: </label>
+          <input
+            placeholder="Nome do produto"
+            type="text"
+            id="pesquisaNome"
+            value={this.props.pesquisaNome}
+            onChange={this.props.atualizarpesquisaNome}
+          ></input>
         </Caixinha>
       </MainContainer>
     );
