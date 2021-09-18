@@ -21,7 +21,7 @@ export const listaProdutos = [
     descricao: "Camisa de nave",
   },
   {
-    id: 3,
+    id: 4,
     imagem: "https://picsum.photos/200/202",
     nome: "Adoidao",
     valor: 250,

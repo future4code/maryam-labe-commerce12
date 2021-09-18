@@ -26,6 +26,24 @@ class App extends React.Component {
     valorMax: "",
     pesquisaNome: "",
     ordem: "nome",
+    carrinho: [
+      {
+        id: 1,
+        imagem: "https://picsum.photos/200/200",
+        nome: "Camisa1",
+        valor: 100,
+        descricao: "camisa de espaço",
+        quantidade: 1,
+      },
+      {
+        id: 2,
+        imagem: "https://picsum.photos/200/201",
+        nome: "Camisa2",
+        valor: 150,
+        descricao: "camisa de nave",
+        quantidade: 2,
+      },
+    ],
   };
 
   controlarInputMax = (event) => {
@@ -63,22 +81,69 @@ class App extends React.Component {
             .includes(this.state.pesquisaNome.toLowerCase())
         );
       })
-      .sort((a,b) =>{
+      .sort((a, b) => {
         switch (this.state.ordem) {
           case "nome":
             return a.nome.localeCompare(b.nome);
           case "valor":
-            return a.valor - b.valor;  
+            return a.valor - b.valor;
           case "nenhum":
-            break 
+            break;
           default:
-            break
+            break;
         }
-      })
+      });
     return produtosFiltrados;
   };
 
+  adicionarItemCarrinho = (id) => {
+    let produtosNoCarrinho = this.state.carrinho.find((produtos) => {
+      return id === produtos.id;
+    });
+    
+    if (produtosNoCarrinho) {
+      const novoProdutoNoCarrinho = this.state.carrinho.map((produto) => {
+        if (id === produto.id) {
+          return {
+            ...produto,
+            quantidade: produto.quantidade + 1,
+          };
+        }
+       
+        return produto;
+      });
+      this.setState({ carrinho: novoProdutoNoCarrinho });
+      
+    } else {
+      const produtoParaAdicionar = listaProdutos.find(
+        (produto) => id === produto.id
+      );
+      const novoProdutoNoCarrinho = [
+        ...this.state.carrinho,
+        { ...produtoParaAdicionar, quantidade: 1 },
+      ];
+
+      this.setState({ carrinho: novoProdutoNoCarrinho });
+    }
+   
+  };
+
+  removerItemCarrinho = (id) => {
+    const novoProdutoNoCarrinho = this.state.carrinho.map((produto) => {
+      if(produto.id === id) {
+        return {
+          ...produto,
+          quantidade: produto.quantidade -1
+        }
+      }
+      return produto
+    }).filter((produto) => produto.quantidade > 0)
+
+    this.setState({carrinho: novoProdutoNoCarrinho})
+  };
+
   render() {
+
     return (
       <MainContainer>
         <DividindoLayout>
@@ -94,8 +159,12 @@ class App extends React.Component {
             produtos={this.filtrarProdutos(listaProdutos)}
             ordem={this.state.ordem}
             atualizarOrdem={this.controlarInputOrdem}
+            adicionarProduto={this.adicionarItemCarrinho}
           />
-          <Carrinho />
+          <Carrinho
+            produtos={this.state.carrinho}
+            excluir={this.removerItemCarrinho}
+          />
         </DividindoLayout>
       </MainContainer>
     );
