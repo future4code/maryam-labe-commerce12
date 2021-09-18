@@ -20,8 +20,34 @@ const DividindoLayout = styled.div`
   align-content: center;
 `;
 
+const arrayDeProdutos = [
+  {
+    id: 1,
+    imagem: "https://picsum.photos/200/200",
+    nome: "Camisa1",
+    valor: 100,
+    descricao: "camisa de espaço",
+  },
+  {
+    id: 2,
+    imagem: "https://picsum.photos/200/201",
+    nome: "Camisa2",
+    valor: 150,
+    descricao: "camisa de nave",
+  },
+  {
+    id: 3,
+    imagem: "https://picsum.photos/200/202",
+    nome: "Camisa3",
+    valor: 70,
+    descricao: "Camisa de nave",
+  },
+];
+
+
 class App extends React.Component {
   state = {
+    listaState: arrayDeProdutos,
     valorMin: "",
     valorMax: "",
     pesquisaNome: "",
@@ -96,6 +122,7 @@ class App extends React.Component {
     return produtosFiltrados;
   };
 
+
   adicionarItemCarrinho = (id) => {
     let produtosNoCarrinho = this.state.carrinho.find((produtos) => {
       return id === produtos.id;
@@ -140,6 +167,7 @@ class App extends React.Component {
     }).filter((produto) => produto.quantidade > 0)
 
     this.setState({carrinho: novoProdutoNoCarrinho})
+
   };
 
   render() {

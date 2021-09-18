@@ -29,6 +29,7 @@ const ItemContainer = styled.div`
   `
 
 class Carrinho extends React.Component {
+
     pegarValorTotal =() => {
         let valorTotal = 0
 
@@ -38,7 +39,6 @@ class Carrinho extends React.Component {
         return valorTotal
     }
 
-    
     render() {
     return (
       <MainContainer>
