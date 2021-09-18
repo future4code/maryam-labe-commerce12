@@ -17,26 +17,44 @@ const Caixinha = styled.div `
     text-align: center;
     padding-bottom: 20px;
 `
+const ItemContainer = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+  `
 
 class Carrinho extends React.Component {
 
+    pegarValorTotal =() => {
+        let valorTotal = 0
+
+        for (let produto of this.props.produtos) {
+            valorTotal += produto.valor * produto.quantidade
+        }
+        return valorTotal
+    }
+
     render() {
     return (
-
-        <MainContainer>
-            <Caixinha>
-                <h3>Carrinho:</h3>
-                x Produto aqui x <button>Remover</button><br/><br/>
-                x Produto aqui x <button>Remover</button><br/><br/>
-                x Produto aqui x <button>Remover</button><br/><br/>
-                x Produto aqui x <button>Remover</button><br/><br/>
-
-                <b>Valor total: R$0,00</b>
-
-            </Caixinha>
-        </MainContainer>
-
-    )
+      <MainContainer>
+        <h3>Carrinho: </h3>
+        <Caixinha>
+          {this.props.produtos.map((produto) => {
+            return <ItemContainer>
+                <p>{produto.nome}</p>
+                <p>{produto.quantidade}</p>
+                <button onClick={() => this.props.excluir(produto.id)}>Remover</button>
+            </ItemContainer>
+          })}
+        </Caixinha>
+        <p>Valor total: R${this.pegarValorTotal()},00</p>
+      </MainContainer>
+    );
 }
 }
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default class Produtos extends React.Component {
   render() {
     // seria legal colocar um if para saber se a lista esta cheia, mas quando eu coloco não consigo acessar a variável camisas
-    console.log(this.props.produtos);
+    //console.log(this.props.produtos);
     const camisas = this.props.produtos.map((camisa) => {
       return (
         <ProdutosContainer>
@@ -21,10 +21,8 @@ export default class Produtos extends React.Component {
             </div>
             <div>
               <MeuBotao
-
-
-              //onClick={() => this.props.adicionarProduto(this.props.id)}
-              >
+              onClick={() => this.props.adicionarProduto(camisa.id)}>
+            
                 Adicionar ao carrinho
               </MeuBotao>
             </div>
