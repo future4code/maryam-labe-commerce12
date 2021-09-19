@@ -9,7 +9,7 @@
 **Surge:** http://breakable-discovery.surge.sh/
 
 **Prints:**
-![image](https://user-images.githubusercontent.com/70452464/133932391-b2c825fa-c591-4d35-9990-1f4b9f5a857f.png)
+![image](https://user-images.githubusercontent.com/70452464/133932406-c4f318b6-4644-4eea-9688-402639cc5600.png)
 
 
 
