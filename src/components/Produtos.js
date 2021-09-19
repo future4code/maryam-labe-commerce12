@@ -20,9 +20,7 @@ export default class Produtos extends React.Component {
               <CardPreco>R$ {camisa.valor},00</CardPreco>
             </div>
             <div>
-              <MeuBotao
-              onClick={() => this.props.adicionarProduto(camisa.id)}>
-            
+              <MeuBotao onClick={() => this.props.adicionarProduto(camisa.id)}>
                 Adicionar ao carrinho
               </MeuBotao>
             </div>
@@ -33,26 +31,38 @@ export default class Produtos extends React.Component {
     });
 
     return (
-      <div>
+      <ProdutoBory>
         <ProdutoHeader>
           <p>Numero de Produtos: {this.props.produtos.length}</p>
-          <div>
-          <label for="sort">Ordenação: </label>
-          <select
-            name="sort"
-            value={this.props.ordem}
-            onChange={this.props.atualizarOrdem}
-          >
-            <option value="nenhum">Nenhuma</option>
-            <option value="nome">Nome</option>
-            <option value="valor">Preço</option>
-          </select>
-          </div>
+          <ProdutoOrdem>
+            <div>
+              <label for="sort">Ordenação: </label>
+              <select
+                name="sort"
+                value={this.props.ordem}
+                onChange={this.props.atualizarOrdem}
+              >
+                <option value="nenhum"></option>
+                <option value="nome">Nome</option>
+                <option value="valor">Preço</option>
+              </select>
+            </div>
+            <div>
+              <label for="order"></label>
+              <select
+                name="order"
+                value={this.props.ordemCrescimento}
+                onChange={this.props.atualizarOrdemCrescimento}
+              >
+                <option value={1}>crescente</option>
+                <option value={-1}>decrescente</option>
+              </select>
+            </div>
+          </ProdutoOrdem>
         </ProdutoHeader>
         <ProdutosContainer>{camisas}</ProdutosContainer>
-      </div>
+      </ProdutoBory>
     );
-
   }
 }
 
@@ -98,8 +108,24 @@ const MeuBotao = styled.button`
   }
 `;
 const ProdutoHeader = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+`;
+
+const ProdutoOrdem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ProdutoBory = styled.div`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`;

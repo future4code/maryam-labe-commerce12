@@ -10,8 +10,6 @@ const MainContainer = styled.div`
 
 const Caixinha = styled.div`
   display: block;
-  justify-content: center;
-  align-content: center;
   border: 1px solid black;
   width: 300px;
   text-align: center;
@@ -24,7 +22,7 @@ export default class Filtro extends React.Component {
       <MainContainer>
         <Caixinha>
           <h3>Filtrar Pesquisas</h3>
-          <br></br>
+          
           <label htmlFor="min">Minimo: </label>
           <input
             placeholder="Valor Mínimo"
