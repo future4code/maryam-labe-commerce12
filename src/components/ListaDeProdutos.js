@@ -1,30 +1,35 @@
+import Foto01 from '../img/01.jpeg'
+import Foto02 from '../img/02.jpg'
+import Foto03 from '../img/03.jpg'
+import Foto04 from '../img/04.jpg'
+
 export const listaProdutos = [
   {
     id: 1,
-    imagem: "https://picsum.photos/200/200",
-    nome: "Camisa1",
+    imagem: Foto01,
+    nome: "Camiseta NASA - Unisex",
     valor: 100,
-    descricao: "camisa de espaço",
+    descricao: "Camiseta com estampa da Nasa no tamanho P.",
   },
   {
     id: 2,
-    imagem: "https://picsum.photos/200/201",
-    nome: "Camisa2",
+    imagem: Foto02,
+    nome: "Camiseta Alienígena - Feminino",
     valor: 150,
-    descricao: "camisa de nave",
+    descricao: "Camiseta com estampa de alien no tamanho G.",
   },
   {
     id: 3,
-    imagem: "https://picsum.photos/200/202",
-    nome: "Camisa3",
+    imagem: Foto03,
+    nome: "Camiseta Astronauta Faxineiro - Masculino",
     valor: 70,
-    descricao: "Camisa de nave",
+    descricao: "Camiseta com estampa de astronauta no tamanho GG.",
   },
   {
     id: 4,
-    imagem: "https://picsum.photos/200/202",
-    nome: "Adoidao",
+    imagem: Foto04,
+    nome: "Camiseta Galáxia - Unisex",
     valor: 250,
-    descricao: "Camisa de alienigenas",
+    descricao: "Camiseta com estampa de galáxia no tamanho M.",
   },
 ];

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CarrinhoIcon from '../img/carrinho.png'
 
 const MainContainer = styled.div`
   display: flex;
@@ -12,10 +13,22 @@ const Caixinha = styled.div`
   display: block;
   justify-content: center;
   align-content: center;
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid purple;
+  border-radius: 4px;
+  width: 250px;
   text-align: center;
   padding-bottom: 20px;
+  background-color: white;
+
+  h3 {
+    font-family: monospace;
+    font-size: x-large;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
 `;
 const ItemContainer = styled.div`
   display: grid;
@@ -44,7 +57,7 @@ class Carrinho extends React.Component {
     return (
       <MainContainer>
         <Caixinha>
-          <h3>Carrinho: </h3>
+          <h3>Carrinho <img src={CarrinhoIcon} alt="Carrinho" /></h3>
           {this.props.produtos.map((produto) => {
             return (
               <ItemContainer>
@@ -56,7 +69,7 @@ class Carrinho extends React.Component {
               </ItemContainer>
             );
           })}
-          <p>Valor total: R${this.pegarValorTotal()},00</p>
+          <p><b>Valor total: R${this.pegarValorTotal()},00</b></p>
         </Caixinha>
       </MainContainer>
     );
