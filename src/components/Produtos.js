@@ -33,7 +33,7 @@ export default class Produtos extends React.Component {
     return (
       <ProdutoBory>
         <ProdutoHeader>
-          <p>Numero de Produtos: {this.props.produtos.length}</p>
+          <p>Número de Produtos: {this.props.produtos.length}</p>
           <ProdutoOrdem>
             <div>
               <label for="sort">Ordenação: </label>
@@ -67,39 +67,40 @@ export default class Produtos extends React.Component {
 }
 
 const ProdutosContainer = styled.div`
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-around;
 `;
 
 const ProdutoCardContainer = styled.div`
   width: 200px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid purple;
   text-align: center;
   margin: 16px 12px;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
+  padding: 5px 5px 5px 5px;
 `;
 
 const ImageCardContainer = styled.img`
   width: 100%;
-  height: 110px;
+  height: 200px;
 `;
 
 const Title = styled.h3`
-  color: grey;
+  color: #724AC4;
 `;
 
 const CardDescricao = styled.p`
-  color: grey;
+  color: #3C2766;
 `;
 
 const CardPreco = styled.div`
   color: gray;
   font-size: 15px;
+  font-weight: bold;
 `;
 
 const MeuBotao = styled.button`

@@ -4,21 +4,66 @@ import Filtro from "./components/Filtro";
 import Produtos from "./components/Produtos";
 import styled from "styled-components";
 import { listaProdutos } from "./components/ListaDeProdutos";
+import Foto01 from '../src/img/01.jpeg'
+import Foto02 from '../src/img/02.jpg'
+import Facebook from './img/facebook.png'
+import Instagram from './img/instagram.png'
+import GitHub from './img/github.png'
+import Twitter from './img/twitter.png'
+import Logo from './img/logo.png'
 
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 30px;
-`;
+`
+
+const Header = styled.div `
+  display: grid;
+  justify-content: space-between;
+  height: 70px;
+  margin-bottom: 10px;
+  align-items: center;
+  grid-column: 1/-1;
+`
+
+const TituloPrincipal = styled.div `
+  display: flex;
+  align-items: center;
+  color: #582E17;
+  margin-top: 10px;
+`
 
 const DividindoLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-content: center;
-`;
+  margin: 70px;
+`
+
+const Footer = styled.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: relative;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 3px;
+    }
+
+    p {
+      margin-left: 10px;
+    }
+`
 
 class App extends React.Component {
   state = {
@@ -30,18 +75,18 @@ class App extends React.Component {
     carrinho: [
       {
         id: 1,
-        imagem: "https://picsum.photos/200/200",
-        nome: "Camisa1",
+        imagem: Foto01,
+        nome: "Camiseta NASA - Unisex",
         valor: 100,
-        descricao: "camisa de espaço",
+        descricao: "Camiseta com estampa da Nasa no tamanho P.",
         quantidade: 1,
       },
       {
         id: 2,
-        imagem: "https://picsum.photos/200/201",
-        nome: "Camisa2",
+        imagem: Foto02,
+        nome: "Camiseta Alienígena - Feminino",
         valor: 150,
-        descricao: "camisa de nave",
+        descricao: "Camiseta com estampa de alien no tamanho G.",
         quantidade: 2,
       },
     ],
@@ -149,6 +194,14 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
+        <Header>
+          <TituloPrincipal>
+          <img 
+          src={Logo}
+          alt="Logotipo"
+          />
+          </TituloPrincipal>
+          </Header>
         <DividindoLayout>
           <Filtro
             atualizarMax={this.controlarInputMax}
@@ -171,6 +224,33 @@ class App extends React.Component {
             excluir={this.removerItemCarrinho}
           />
         </DividindoLayout>
+        <Footer>
+          <img 
+          src={Facebook} 
+          alt="Facebook"
+          title="Curta a nossa página no Facebook!"
+          />
+          
+          <img 
+          src={Instagram} 
+          alt="Instagram"
+          title="Siga o nosso perfil no Instagram!"
+          />
+
+          <img 
+          src={Twitter} 
+          alt="Twitter"
+          title="Siga a gente no Twitter!"
+          />
+
+          <img 
+          src={GitHub} 
+          alt="GitHub"
+          title="Feito por Emilly, Maria Helena e Willian"
+          />
+
+          <p>© 2021 - Todos os direitos reservados.</p>
+        </Footer>
       </MainContainer>
     );
   }

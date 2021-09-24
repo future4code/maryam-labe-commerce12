@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Buscar from '../img/busca.png'
+
 
 const MainContainer = styled.div`
   display: flex;
@@ -10,10 +12,22 @@ const MainContainer = styled.div`
 
 const Caixinha = styled.div`
   display: block;
-  border: 1px solid black;
-  width: 300px;
+  border: 1px solid purple;
+  border-radius: 4px;
+  width: 250px;
   text-align: center;
   padding-bottom: 20px;
+  background-color: white;
+
+  h3 {
+    font-family: monospace;
+    font-size: x-large;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
 `;
 
 export default class Filtro extends React.Component {
@@ -21,9 +35,9 @@ export default class Filtro extends React.Component {
     return (
       <MainContainer>
         <Caixinha>
-          <h3>Filtrar Pesquisas</h3>
+          <h3>Filtrar Pesquisas <img src={Buscar} alt="Carrinho" /></h3>
           
-          <label htmlFor="min">Minimo: </label>
+          <label htmlFor="min">Mínimo: </label>
           <input
             placeholder="Valor Mínimo"
             type="number"
@@ -33,7 +47,7 @@ export default class Filtro extends React.Component {
             onChange={this.props.atualizarMin}
           ></input>
           <br></br>
-          <label htmlFor="max">Maximo: </label>
+          <label htmlFor="max">Máximo: </label>
           <input
             placeholder="Valor Máximo"
             type="number"
