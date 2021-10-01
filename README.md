@@ -1,4 +1,4 @@
-# Projeto LabECommerce 🛍️
+# projeto LabECommerce 🛍️
 
 **Descrição:** Camisetas espaciais para terráqueos descolados. 👽
 
